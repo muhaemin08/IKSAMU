@@ -1,0 +1,577 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendidikan Formal - MTs & SMK Miftahul Ulum Gunung Bubut</title>
+  <meta name="description" content="Pendidikan Formal Terpadu MTs Miftahul Ulum (Akreditasi A) dan SMK Miftahul Ulum (TKJ, RPL, TBSM) di Pondok Pesantren Miftahul Ulum Gunung Bubut Sodonghilir Tasikmalaya.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: { 850: '#064e3b', 950: '#022c22' },
+            gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            arabic: ['Amiri', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white">
+
+  <!-- TOP BAR -->
+  <div class="bg-emerald-950 text-white text-xs border-b border-emerald-800 py-2.5 px-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2 text-emerald-200">
+          <i class="fa-solid fa-graduation-cap text-amber-400"></i> MTs & SMK Terpadu Berbasis Kepesantrenan
+        </span>
+        <span class="flex items-center gap-2 text-emerald-200">
+          <i class="fa-solid fa-certificate text-amber-400"></i> Ijazah Resmi Kemenag & Kemendikbudristek
+        </span>
+      </div>
+      <div class="text-amber-300 font-medium">
+        Lulusan Berakhlak Qur'ani & Ahli Teknologi
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header id="siteHeader" class="sticky top-0 z-40 bg-white border-b border-slate-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <img src="assets/images/logo-pesantren.jpg" onerror="this.onerror=null; this.src='assets/images/logo.svg';" alt="Logo" class="w-12 h-12 md:w-14 md:h-14 transition-transform group-hover:scale-105 object-contain rounded-full">
+          <div>
+            <h1 class="text-base md:text-lg font-extrabold text-emerald-900 leading-tight uppercase">Miftahul Ulum</h1>
+            <p class="text-xs font-semibold text-amber-600 tracking-wider">GUNUNG BUBUT - TASIKMALAYA</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-sm font-semibold text-slate-700">
+          <a href="index.html" class="desktop-nav-link px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">Beranda</a>
+
+          <!-- Tentang -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">
+              <span>Tentang</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-64 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="profil.html#profil" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-mosque text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Profil Pesantren</div><div class="text-xs text-slate-500">Identitas pondok</div></div>
+                </a>
+                <a href="profil.html#sejarah" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-landmark-dome text-amber-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Sejarah Pesantren</div><div class="text-xs text-slate-500">Napak tilas muassis</div></div>
+                </a>
+                <a href="profil.html#masayikh" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-user-tie text-emerald-700 w-5"></i>
+                  <div><div class="font-bold text-sm">Dewan Masayikh</div><div class="text-xs text-slate-500">Pimpinan & pengasuh</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asrama -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">
+              <span>Asrama</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-64 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="asrama.html#asrama-putra" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-person text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Asrama Putra</div><div class="text-xs text-slate-500">Darul Muttaqin</div></div>
+                </a>
+                <a href="asrama.html#asrama-putri" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-person-dress text-pink-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Asrama Putri</div><div class="text-xs text-slate-500">Darul Khadijah</div></div>
+                </a>
+                <a href="asrama.html#jadwal" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-clock text-amber-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Jadwal Harian</div><div class="text-xs text-slate-500">24 Jam Santri</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pendidikan Formal (Active) -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link text-emerald-700 font-bold border-b-2 border-amber-500 flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-emerald-50">
+              <span>Pendidikan Formal</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-72 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="pendidikan.html#mts" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700 hover:text-emerald-800">
+                  <i class="fa-solid fa-graduation-cap text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">MTS Miftahul Ulum</div><div class="text-xs text-slate-500">Madrasah Tsanawiyah</div></div>
+                </a>
+                <a href="pendidikan.html#smk" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700 hover:text-emerald-800">
+                  <i class="fa-solid fa-laptop-code text-blue-600 w-5"></i>
+                  <div><div class="font-bold text-sm">SMK Miftahul Ulum</div><div class="text-xs text-slate-500">Kejuruan IT & Vokasi</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publikasi -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">
+              <span>Publikasi</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-64 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="publikasi.html?tab=Artikel" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-newspaper text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Artikel</div><div class="text-xs text-slate-500">Kajian keislaman</div></div>
+                </a>
+                <a href="publikasi.html?tab=Even" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-calendar-check text-amber-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Even</div><div class="text-xs text-slate-500">Agenda & acara akbar</div></div>
+                </a>
+                <a href="publikasi.html?tab=Kegiatan Santri" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-users-rays text-indigo-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Kegiatan Santri</div><div class="text-xs text-slate-500">Aktivitas harian</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="kontak.html" class="desktop-nav-link px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">Kontak</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="psb.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm text-white bg-gold-gradient shadow-md hover:shadow-lg">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Daftar Santri Baru (PSB)</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2 lg:hidden">
+          <button id="mobileMenuToggle" class="p-2 text-slate-700 hover:text-emerald-700 rounded-lg">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden">
+    <div class="drawer-content fixed top-0 left-0 bottom-0 w-80 max-w-full bg-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300">
+      <div class="p-4 bg-emerald-950 text-white flex justify-between items-center">
+        <div class="font-bold text-sm">MIFTAHUL ULUM GUNUNG BUBUT</div>
+        <button id="mobileMenuClose" class="text-slate-300"><i class="fa-solid fa-xmark text-2xl"></i></button>
+      </div>
+      <div class="p-4 space-y-2 text-sm font-semibold text-slate-700 overflow-y-auto">
+        <a href="index.html" class="block py-2">Beranda</a>
+        <a href="profil.html" class="block py-2">Tentang Pesantren</a>
+        <a href="asrama.html" class="block py-2">Asrama</a>
+        <a href="pendidikan.html" class="block py-2 text-emerald-700">Pendidikan Formal (MTs & SMK)</a>
+        <a href="publikasi.html" class="block py-2">Publikasi</a>
+        <a href="psb.html" class="block py-2 text-amber-600">PSB Online</a>
+        <a href="kontak.html" class="block py-2">Kontak</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB & HEADER -->
+  <section class="bg-emerald-950 text-white py-12 relative overflow-hidden">
+    <div class="absolute inset-0 bg-islamic-pattern opacity-15"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+      <div class="flex items-center justify-center sm:justify-start gap-2 text-xs text-emerald-300 mb-2 font-medium">
+        <a href="index.html" class="hover:text-amber-400">Beranda</a>
+        <span>/</span>
+        <span class="text-amber-400">Pendidikan Formal</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white">MTS & SMK Miftahul Ulum Gunung Bubut</h1>
+      <p class="text-slate-200 text-sm mt-2 max-w-2xl">
+        Integrasi kurikulum terpadu Kementerian Agama, Kemendikbudristek, dan Pesantren Salafiyah yang melahirkan insan akademis, religius, dan terampil.
+      </p>
+    </div>
+  </section>
+
+  <!-- JUMPLINKS -->
+  <div class="sticky top-20 z-30 bg-white border-b border-slate-200 shadow-sm py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center sm:justify-start gap-3 text-xs sm:text-sm font-bold">
+      <a href="#mts" class="px-4 py-2 rounded-full bg-emerald-100 text-emerald-900 hover:bg-emerald-200 transition-colors">
+        <i class="fa-solid fa-graduation-cap mr-1.5"></i> MTS Miftahul Ulum
+      </a>
+      <a href="#smk" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 hover:bg-blue-100 hover:text-blue-900 transition-colors">
+        <i class="fa-solid fa-laptop-code mr-1.5"></i> SMK Miftahul Ulum
+      </a>
+      <a href="#kurikulum" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 hover:bg-amber-100 hover:text-amber-900 transition-colors">
+        <i class="fa-solid fa-book-atlas mr-1.5"></i> Kurikulum Terpadu
+      </a>
+      <a href="#ekskul" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 hover:bg-purple-100 hover:text-purple-900 transition-colors">
+        <i class="fa-solid fa-trophy mr-1.5"></i> Ekstrakurikuler
+      </a>
+    </div>
+  </div>
+
+  <!-- BAGIAN 1: MTS MIFTAHUL ULUM GUNUNG BUBUT -->
+  <section id="mts" class="py-16 bg-white scroll-mt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full font-extrabold text-xs">
+              JENJANG MENENGAH PERTAMA (SLTP)
+            </span>
+            <span class="px-3 py-1 bg-amber-100 text-amber-800 rounded-full font-extrabold text-xs">
+              TERAKREDITASI A (UNGGUL)
+            </span>
+          </div>
+
+          <h2 class="text-3xl font-extrabold text-emerald-950">
+            MTs Miftahul Ulum Gunung Bubut
+          </h2>
+
+          <div class="text-xs text-slate-500 font-semibold flex items-center gap-4">
+            <span><i class="fa-solid fa-id-card text-emerald-600 mr-1"></i> NPSN: 20278561</span>
+            <span><i class="fa-solid fa-user-tie text-emerald-600 mr-1"></i> Kepala Madrasah: Drs. H. Mamat Rohimat, M.M.</span>
+          </div>
+
+          <p class="text-slate-600 text-sm leading-relaxed">
+            MTs Miftahul Ulum memadukan kurikulum Kementerian Agama RI (Al-Qur'an Hadits, Akidah Akhlak, Fiqih, SKI, Bahasa Arab) dengan kurikulum sains nasional dan pembiasaan salafiyah. Di jenjang ini, santri dibimbing intensif menuntaskan hafalan Juz 'Amma (Juz 30) dan menguasai dasar-dasar kitab Matan Jurumiyah serta Imrithi.
+          </p>
+
+          <!-- Keunggulan MTs -->
+          <div class="space-y-3 pt-2">
+            <div class="text-xs font-bold text-emerald-950 uppercase tracking-wider">Keunggulan & Fasilitas MTs:</div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-600">
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+                <span>Program Kelas Tahfidz Al-Qur'an terpadu asrama</span>
+              </div>
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+                <span>Laboratorium IPA & Komputer ber-AC</span>
+              </div>
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+                <span>Bebas SPP untuk Santri Yatim & Dhuafa</span>
+              </div>
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-start gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-600 mt-0.5"></i>
+                <span>Bimbingan Olimpiade Sains & KSM Tingkat Kabupaten</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <a href="psb.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full text-xs font-bold text-white bg-emerald-800 hover:bg-emerald-700 shadow-md transition-all">
+              <i class="fa-solid fa-file-pen"></i>
+              <span>Daftar Santri Baru MTs Miftahul Ulum</span>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-emerald-900 text-white p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-islamic-pattern opacity-10"></div>
+            <div class="relative z-10 space-y-6">
+              <div class="w-16 h-16 rounded-2xl bg-amber-400 text-slate-950 flex items-center justify-center text-3xl font-extrabold shadow-lg">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div>
+                <span class="text-xs font-bold text-amber-300 uppercase tracking-widest">Akreditasi Unggul</span>
+                <h3 class="text-2xl font-extrabold text-white mt-1">Nilai Akreditasi "A" BAN-SM</h3>
+                <p class="text-xs text-emerald-100 mt-2 leading-relaxed">
+                  Menjamin kualitas sarana prasarana, standar kompetensi lulusan, tenaga pendidik berkompeten, dan pengelolaan madrasah yang profesional.
+                </p>
+              </div>
+              <div class="border-t border-emerald-800 pt-4 text-xs space-y-2 text-emerald-200">
+                <div class="flex justify-between"><span>Tahun Berdiri:</span><span class="text-white font-bold">1998</span></div>
+                <div class="flex justify-between"><span>Status:</span><span class="text-white font-bold">Madrasah Swasta Kemenag</span></div>
+                <div class="flex justify-between"><span>Kurikulum:</span><span class="text-white font-bold">Kurikulum Merdeka + Salaf</span></div>
+                <div class="flex justify-between"><span>Lokasi:</span><span class="text-white font-bold">Kompleks Ponpes Gn. Bubut</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BAGIAN 2: SMK MIFTAHUL ULUM GUNUNG BUBUT -->
+  <section id="smk" class="py-16 bg-slate-50 border-t border-slate-200/60 scroll-mt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-extrabold tracking-widest text-blue-700 uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+          Vokasi Kejuruan Santri Terdepan
+        </span>
+        <h2 class="text-3xl font-extrabold text-emerald-950 mt-3">
+          SMK Miftahul Ulum Gunung Bubut
+        </h2>
+        <div class="islamic-divider">
+          <i class="fa-solid fa-laptop-code text-amber-500"></i>
+        </div>
+        <p class="text-slate-600 text-sm">
+          Mencetak lulusan santri yang siap kerja di industri, siap berwirausaha mandiri (technopreneur), dan siap melanjutkan ke perguruan tinggi ternama.
+        </p>
+      </div>
+
+      <!-- KARTU 3 JURUSAN UNGGULAN SMK -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        
+        <!-- Jurusan 1: TKJ -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover-card-elevate flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-800 flex items-center justify-center text-2xl font-bold mb-4">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md">
+              KODE: TKJ
+            </span>
+            <h3 class="font-extrabold text-lg text-slate-900 mt-2 mb-2">
+              Teknik Komputer & Jaringan
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Santri dididik menguasai instalasi jaringan kabel serat optik (Fiber Optic), mikrotik routing, konfigurasi server Linux/Windows, wireless networking, dan administrasi cloud computing.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5">
+              <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Sertifikasi Mikrotik & Cisco Dasar</li>
+              <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Praktik Lab Komputer Client-Server</li>
+              <li><i class="fa-solid fa-check text-blue-600 mr-1.5"></i> Maintenance & Hardware Repair</li>
+            </ul>
+          </div>
+          <div class="pt-6">
+            <span class="text-xs font-bold text-blue-700">Prospek: Network Admin, IT Support, ISP</span>
+          </div>
+        </div>
+
+        <!-- Jurusan 2: RPL -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover-card-elevate flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-2xl font-bold mb-4">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-md">
+              KODE: RPL
+            </span>
+            <h3 class="font-extrabold text-lg text-slate-900 mt-2 mb-2">
+              Rekayasa Perangkat Lunak
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Mendidik santri menjadi pengembang software masa depan. Mempelajari pemrograman web modern (HTML, CSS, JavaScript, PHP/Laravel, Python), database SQL, dan pembuatan aplikasi mobile.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Web Development & Fullstack Basics</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Pembuatan Aplikasi Kasir & Sistem Pesantren</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Desain UI/UX & Digital Portfolio</li>
+            </ul>
+          </div>
+          <div class="pt-6">
+            <span class="text-xs font-bold text-emerald-700">Prospek: Web Developer, Programmer, UI Designer</span>
+          </div>
+        </div>
+
+        <!-- Jurusan 3: TBSM -->
+        <div class="bg-white rounded-3xl p-6 border border-slate-200 shadow-sm hover-card-elevate flex flex-col justify-between">
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-800 flex items-center justify-center text-2xl font-bold mb-4">
+              <i class="fa-solid fa-motorcycle"></i>
+            </div>
+            <span class="text-[10px] font-extrabold uppercase px-2.5 py-1 bg-amber-50 text-amber-700 rounded-md">
+              KODE: TBSM
+            </span>
+            <h3 class="font-extrabold text-lg text-slate-900 mt-2 mb-2">
+              Teknik Bisnis Sepeda Motor
+            </h3>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4">
+              Keahlian teknik otomotif roda dua meliputi sistem pembakaran injeksi bahan bakar (EFI), kelistrikan body, servis transmisi matic/manual, serta manajemen pengelolaan bengkel profesional.
+            </p>
+            <ul class="text-xs text-slate-500 space-y-1.5">
+              <li><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Bengkel Praktik Otomotif Berstandar</li>
+              <li><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Tune Up & Diagnostic Scanner Motor</li>
+              <li><i class="fa-solid fa-check text-amber-600 mr-1.5"></i> Jiwa Technopreneur Usaha Bengkel Mandiri</li>
+            </ul>
+          </div>
+          <div class="pt-6">
+            <span class="text-xs font-bold text-amber-700">Prospek: Mekanik Handal, Owner Bengkel, Teknisi</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Kerjasama Industri & PKL -->
+      <div class="bg-slate-900 text-white rounded-3xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div class="space-y-2">
+          <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Link & Match Industri</span>
+          <h3 class="text-xl sm:text-2xl font-bold text-white">Program Praktik Kerja Lapangan (PKL) & Kerjasama DU/DI</h3>
+          <p class="text-xs text-slate-300 max-w-2xl leading-relaxed">
+            SMK Miftahul Ulum menjalin kemitraan dengan berbagai industri teknologi, bengkel resmi, penyedia jasa internet, dan instansi pemerintahan di Priangan Timur hingga Bandung dan Jakarta untuk penyaluran magang santri.
+          </p>
+        </div>
+        <a href="psb.html" class="shrink-0 px-6 py-3 rounded-full text-xs font-bold text-slate-950 bg-amber-400 hover:bg-amber-300 transition-all">
+          Daftar SMK MU Sekarang
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BAGIAN 3: KURIKULUM TERPADU -->
+  <section id="kurikulum" class="py-16 bg-white border-t border-slate-200/60 scroll-mt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-xs font-extrabold tracking-widest text-emerald-700 uppercase bg-emerald-100 px-3 py-1 rounded-full">
+          Harmonisasi Kurikulum
+        </span>
+        <h2 class="text-3xl font-extrabold text-emerald-950 mt-3">
+          Sinergi 3 Kurikulum Terpadu
+        </h2>
+        <div class="islamic-divider">
+          <i class="fa-solid fa-scroll text-amber-500"></i>
+        </div>
+        <p class="text-slate-600 text-sm">
+          Santri tidak perlu memilih antara ilmu agama atau ilmu dunia — di Miftahul Ulum, keduanya dipelajari secara seimbang dan terpadu.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-3xl bg-emerald-50 border border-emerald-200 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-800 text-white flex items-center justify-center font-bold text-xl">
+            1
+          </div>
+          <h3 class="font-extrabold text-base text-emerald-950">Kurikulum Salafiyah Pesantren</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Kajian mendalam kitab kuning: Al-Ajurumiyyah, Al-Imrithi, Alfiyah Ibnu Malik, Fathul Qorib Al-Mujib, Fathul Mu'in, Kifayatul Akhyar, Tafsir Jalalain, Riyadhus Shalihin, dan Taisirul Kholaq.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-blue-50 border border-blue-200 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-blue-800 text-white flex items-center justify-center font-bold text-xl">
+            2
+          </div>
+          <h3 class="font-extrabold text-base text-blue-950">Kurikulum Nasional (Kemenag & Kemendikbud)</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Pembelajaran Matematika, Bahasa Indonesia, Bahasa Inggris, IPA, IPS, PPKn, dan PAI yang terstandar Asesmen Nasional Berbasis Komputer (ANBK) serta Ijazah Resmi Negara.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-3xl bg-amber-50 border border-amber-200 space-y-3">
+          <div class="w-12 h-12 rounded-2xl bg-amber-800 text-white flex items-center justify-center font-bold text-xl">
+            3
+          </div>
+          <h3 class="font-extrabold text-base text-amber-950">Kurikulum Vokasi & Keterampilan Santri</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Penguasaan praktikum hardware, software coding, public speaking (khitobah 3 bahasa), kaligrafi arab, seni rebana hadroh, serta kepemimpinan kepesantrenan.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BAGIAN 4: EKSTRAKURIKULER -->
+  <section id="ekskul" class="py-16 bg-slate-50 border-t border-slate-200/60 scroll-mt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs font-extrabold tracking-widest text-purple-700 uppercase bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
+          Minat, Bakat & Prestasi
+        </span>
+        <h2 class="text-3xl font-extrabold text-emerald-950 mt-3">
+          Kegiatan Ekstrakurikuler Santri
+        </h2>
+        <div class="islamic-divider">
+          <i class="fa-solid fa-shapes text-amber-500"></i>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+        
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover-card-elevate">
+          <div class="text-3xl text-emerald-700 mb-2"><i class="fa-solid fa-campground"></i></div>
+          <h4 class="font-bold text-xs text-slate-900">Pramuka Santri</h4>
+          <p class="text-[10px] text-slate-500 mt-1">Disiplin & Survival</p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover-card-elevate">
+          <div class="text-3xl text-amber-600 mb-2"><i class="fa-solid fa-drum"></i></div>
+          <h4 class="font-bold text-xs text-slate-900">Seni Hadroh</h4>
+          <p class="text-[10px] text-slate-500 mt-1">Sholawat Al-Banjari</p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover-card-elevate">
+          <div class="text-3xl text-blue-600 mb-2"><i class="fa-solid fa-code"></i></div>
+          <h4 class="font-bold text-xs text-slate-900">Coding Squad</h4>
+          <p class="text-[10px] text-slate-500 mt-1">Komunitas Web IT</p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover-card-elevate">
+          <div class="text-3xl text-red-600 mb-2"><i class="fa-solid fa-shield-cat"></i></div>
+          <h4 class="font-bold text-xs text-slate-900">Pagar Nusa</h4>
+          <p class="text-[10px] text-slate-500 mt-1">Pencak Silat Salaf</p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover-card-elevate">
+          <div class="text-3xl text-indigo-600 mb-2"><i class="fa-solid fa-language"></i></div>
+          <h4 class="font-bold text-xs text-slate-900">Language Club</h4>
+          <p class="text-[10px] text-slate-500 mt-1">Arab & Inggris</p>
+        </div>
+
+        <div class="p-5 bg-white rounded-2xl border border-slate-200 shadow-sm hover-card-elevate">
+          <div class="text-3xl text-teal-600 mb-2"><i class="fa-solid fa-pen-nib"></i></div>
+          <h4 class="font-bold text-xs text-slate-900">Kaligrafi Islam</h4>
+          <p class="text-[10px] text-slate-500 mt-1">Khath Kufi & Tsuluts</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center text-xs text-slate-500">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <img src="assets/images/logo-pesantren.jpg" onerror="this.onerror=null; this.src='assets/images/logo.svg';" alt="Logo" class="w-10 h-10 object-contain rounded-full">
+        <span class="font-bold text-white text-sm">PONDOK PESANTREN MIFTAHUL ULUM GUNUNG BUBUT</span>
+      </div>
+      <div>&copy; 2026 MTs & SMK Miftahul Ulum Gunung Bubut Tasikmalaya. Hak Cipta Dilindungi.</div>
+      <div class="mt-3 flex justify-center gap-4 text-slate-400">
+        <a href="index.html" class="hover:text-white">Beranda</a>
+        <a href="profil.html" class="hover:text-white">Tentang</a>
+        <a href="asrama.html" class="hover:text-white">Asrama</a>
+        <a href="publikasi.html" class="hover:text-white">Publikasi</a>
+        <a href="psb.html" class="hover:text-white">PSB Online</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+

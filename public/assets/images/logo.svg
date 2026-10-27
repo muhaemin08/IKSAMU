@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="50%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="50%" stop-color="#065F46" />
+      <stop offset="100%" stop-color="#064E3B" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Ring with Islamic 8-Point Star Geometry -->
+  <circle cx="250" cy="250" r="235" fill="none" stroke="url(#goldGrad)" stroke-width="6" />
+  <circle cx="250" cy="250" r="222" fill="url(#greenGrad)" filter="url(#shadow)" />
+  <circle cx="250" cy="250" r="214" fill="none" stroke="#FBBF24" stroke-width="2" stroke-dasharray="6,4" />
+
+  <!-- Inner Circle -->
+  <circle cx="250" cy="250" r="160" fill="#044E3B" stroke="url(#goldGrad)" stroke-width="4" />
+
+  <!-- Dome Motif -->
+  <path d="M 250 140 C 220 180 200 215 200 245 L 300 245 C 300 215 280 180 250 140 Z" fill="#FBBF24" />
+  
+  <!-- Crescent & Star on top of dome -->
+  <path d="M 250 115 A 14 14 0 1 1 240 135 A 11 11 0 1 0 250 115 Z" fill="#FDE68A" />
+  <polygon points="252,118 254,123 259,123 255,126 257,131 252,128 247,131 249,126 245,123 250,123" fill="#FBBF24" />
+
+  <!-- Open Quran Book Motif -->
+  <path d="M 250 255 C 225 240 185 242 165 258 L 165 295 C 190 280 230 280 250 292 C 270 280 310 280 335 295 L 335 258 C 315 242 275 240 250 255 Z" fill="#FFFFFF" stroke="#FBBF24" stroke-width="3" />
+  <line x1="250" y1="255" x2="250" y2="292" stroke="#047857" stroke-width="2" />
+  <!-- Book Page Lines -->
+  <line x1="185" y1="262" x2="235" y2="255" stroke="#CBD5E1" stroke-width="2" />
+  <line x1="185" y1="272" x2="235" y2="265" stroke="#CBD5E1" stroke-width="2" />
+  <line x1="185" y1="282" x2="235" y2="275" stroke="#CBD5E1" stroke-width="2" />
+  <line x1="265" y1="255" x2="315" y2="262" stroke="#CBD5E1" stroke-width="2" />
+  <line x1="265" y1="265" x2="315" y2="272" stroke="#CBD5E1" stroke-width="2" />
+  <line x1="265" y1="275" x2="315" y2="282" stroke="#CBD5E1" stroke-width="2" />
+
+  <!-- Small Rehal / Book Stand Base -->
+  <polygon points="225,296 275,296 290,320 210,320" fill="url(#goldGrad)" />
+  <polygon points="250,296 230,328 270,328" fill="#92400E" />
+
+  <!-- Rays of Knowledge -->
+  <g stroke="#FDE68A" stroke-width="2" opacity="0.6">
+    <line x1="250" y1="130" x2="250" y2="100" />
+    <line x1="225" y1="140" x2="205" y2="115" />
+    <line x1="275" y1="140" x2="295" y2="115" />
+    <line x1="205" y1="160" x2="180" y2="140" />
+    <line x1="295" y1="160" x2="320" y2="140" />
+  </g>
+
+  <!-- Circular Text Along Path -->
+  <path id="textArcTop" d="M 60 250 A 190 190 0 1 1 440 250" fill="none" />
+  <path id="textArcBottom" d="M 440 250 A 190 190 0 0 1 60 250" fill="none" />
+
+  <text font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="21" fill="#FDE68A" letter-spacing="3.5">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      PONDOK PESANTREN MIFTAHUL ULUM
+    </textPath>
+  </text>
+
+  <text font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="20" fill="#FFFFFF" letter-spacing="3">
+    <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">
+      ★ GUNUNG BUBUT - TASIKMALAYA ★
+    </textPath>
+  </text>
+
+  <!-- Star accents -->
+  <g fill="#FBBF24">
+    <circle cx="250" cy="360" r="4" />
+    <circle cx="235" cy="360" r="3" />
+    <circle cx="265" cy="360" r="3" />
+  </g>
+</svg>

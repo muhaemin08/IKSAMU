@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asrama Putra & Putri - Kehidupan Santri | Ponpes Miftahul Ulum Gunung Bubut</title>
+  <meta name="description" content="Informasi Asrama Putra (Darul Muttaqin) dan Asrama Putri (Darul Khadijah) Pondok Pesantren Miftahul Ulum Gunung Bubut Tasikmalaya. Fasilitas, tata tertib dan jadwal santri 24 jam.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            emerald: { 850: '#064e3b', 950: '#022c22' },
+            gold: { 400: '#fbbf24', 500: '#f59e0b', 600: '#d97706', 700: '#b45309' }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            arabic: ['Amiri', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white">
+
+  <!-- TOP BAR -->
+  <div class="bg-emerald-950 text-white text-xs border-b border-emerald-800 py-2.5 px-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-6">
+        <span class="flex items-center gap-2 text-emerald-200">
+          <i class="fa-solid fa-location-dot text-amber-400"></i> Kompleks Asrama Gunung Bubut, Sodonghilir
+        </span>
+        <span class="flex items-center gap-2 text-emerald-200">
+          <i class="fa-solid fa-bed text-amber-400"></i> Lingkungan Asri, Bersih & Berkah
+        </span>
+      </div>
+      <div class="text-amber-300 font-medium">
+        Pembinaan Karakter 24 Jam Mandiri & Religius
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header id="siteHeader" class="sticky top-0 z-40 bg-white border-b border-slate-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <a href="index.html" class="flex items-center gap-3.5 group">
+          <img src="assets/images/logo-pesantren.jpg" onerror="this.onerror=null; this.src='assets/images/logo.svg';" alt="Logo" class="w-12 h-12 md:w-14 md:h-14 transition-transform group-hover:scale-105 object-contain rounded-full">
+          <div>
+            <h1 class="text-base md:text-lg font-extrabold text-emerald-900 leading-tight uppercase">Miftahul Ulum</h1>
+            <p class="text-xs font-semibold text-amber-600 tracking-wider">GUNUNG BUBUT - TASIKMALAYA</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-sm font-semibold text-slate-700">
+          <a href="index.html" class="desktop-nav-link px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">Beranda</a>
+
+          <!-- Tentang -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">
+              <span>Tentang</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-64 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="profil.html#profil" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-mosque text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Profil Pesantren</div><div class="text-xs text-slate-500">Identitas pondok</div></div>
+                </a>
+                <a href="profil.html#sejarah" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-landmark-dome text-amber-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Sejarah Pesantren</div><div class="text-xs text-slate-500">Napak tilas muassis</div></div>
+                </a>
+                <a href="profil.html#masayikh" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-user-tie text-emerald-700 w-5"></i>
+                  <div><div class="font-bold text-sm">Dewan Masayikh</div><div class="text-xs text-slate-500">Pimpinan & pengasuh</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Asrama (Active) -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link text-emerald-700 font-bold border-b-2 border-amber-500 flex items-center gap-1.5 px-3 py-2 rounded-lg hover:bg-emerald-50">
+              <span>Asrama</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-64 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="asrama.html#asrama-putra" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700 hover:text-emerald-800">
+                  <i class="fa-solid fa-person text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Asrama Putra</div><div class="text-xs text-slate-500">Darul Muttaqin</div></div>
+                </a>
+                <a href="asrama.html#asrama-putri" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700 hover:text-emerald-800">
+                  <i class="fa-solid fa-person-dress text-pink-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Asrama Putri</div><div class="text-xs text-slate-500">Darul Khadijah</div></div>
+                </a>
+                <a href="asrama.html#jadwal" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700 hover:text-emerald-800">
+                  <i class="fa-solid fa-clock text-amber-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Jadwal Harian</div><div class="text-xs text-slate-500">24 Jam Santri</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pendidikan Formal -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">
+              <span>Pendidikan Formal</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-72 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="pendidikan.html#mts" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-graduation-cap text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">MTS Miftahul Ulum</div><div class="text-xs text-slate-500">Madrasah Tsanawiyah</div></div>
+                </a>
+                <a href="pendidikan.html#smk" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-laptop-code text-blue-600 w-5"></i>
+                  <div><div class="font-bold text-sm">SMK Miftahul Ulum</div><div class="text-xs text-slate-500">Kejuruan IT & Vokasi</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Publikasi -->
+          <div class="relative dropdown-group">
+            <button class="desktop-nav-link flex items-center gap-1.5 px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">
+              <span>Publikasi</span>
+              <i class="fa-solid fa-chevron-down text-xs"></i>
+            </button>
+            <div class="dropdown-menu absolute top-full left-0 w-64 pt-2">
+              <div class="bg-white rounded-xl shadow-xl border border-slate-100 p-2 space-y-1">
+                <a href="publikasi.html?tab=Artikel" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-newspaper text-emerald-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Artikel</div><div class="text-xs text-slate-500">Kajian keislaman</div></div>
+                </a>
+                <a href="publikasi.html?tab=Even" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-calendar-check text-amber-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Even</div><div class="text-xs text-slate-500">Agenda & acara akbar</div></div>
+                </a>
+                <a href="publikasi.html?tab=Kegiatan Santri" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-emerald-50 text-slate-700">
+                  <i class="fa-solid fa-users-rays text-indigo-600 w-5"></i>
+                  <div><div class="font-bold text-sm">Kegiatan Santri</div><div class="text-xs text-slate-500">Aktivitas harian</div></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a href="kontak.html" class="desktop-nav-link px-3 py-2 rounded-lg hover:text-emerald-700 hover:bg-emerald-50">Kontak</a>
+        </nav>
+
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="psb.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-sm text-white bg-gold-gradient shadow-md hover:shadow-lg">
+            <i class="fa-solid fa-file-signature"></i>
+            <span>Daftar Santri Baru (PSB)</span>
+          </a>
+        </div>
+
+        <div class="flex items-center gap-2 lg:hidden">
+          <button id="mobileMenuToggle" class="p-2 text-slate-700 hover:text-emerald-700 rounded-lg">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <div id="mobileMenu" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden">
+    <div class="drawer-content fixed top-0 left-0 bottom-0 w-80 max-w-full bg-white shadow-2xl flex flex-col transform -translate-x-full transition-transform duration-300">
+      <div class="p-4 bg-emerald-950 text-white flex justify-between items-center">
+        <div class="font-bold text-sm">MIFTAHUL ULUM GUNUNG BUBUT</div>
+        <button id="mobileMenuClose" class="text-slate-300"><i class="fa-solid fa-xmark text-2xl"></i></button>
+      </div>
+      <div class="p-4 space-y-2 text-sm font-semibold text-slate-700 overflow-y-auto">
+        <a href="index.html" class="block py-2">Beranda</a>
+        <a href="profil.html" class="block py-2">Tentang Pesantren</a>
+        <a href="asrama.html" class="block py-2 text-emerald-700">Asrama Putra & Putri</a>
+        <a href="pendidikan.html" class="block py-2">Pendidikan Formal</a>
+        <a href="publikasi.html" class="block py-2">Publikasi</a>
+        <a href="psb.html" class="block py-2 text-amber-600">PSB Online</a>
+        <a href="kontak.html" class="block py-2">Kontak</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREADCRUMB & HEADER -->
+  <section class="bg-emerald-950 text-white py-12 relative overflow-hidden">
+    <div class="absolute inset-0 bg-islamic-pattern opacity-15"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+      <div class="flex items-center justify-center sm:justify-start gap-2 text-xs text-emerald-300 mb-2 font-medium">
+        <a href="index.html" class="hover:text-amber-400">Beranda</a>
+        <span>/</span>
+        <span class="text-amber-400">Asrama Santri</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-white">Asrama Putra & Asrama Putri</h1>
+      <p class="text-slate-200 text-sm mt-2 max-w-2xl">
+        Hunian santri yang representatif, nyaman, dan higienis sebagai kawah candradimuka pembentukan kedisiplinan dan ukhuwah islamiyah.
+      </p>
+    </div>
+  </section>
+
+  <!-- JUMPLINKS -->
+  <div class="sticky top-20 z-30 bg-white border-b border-slate-200 shadow-sm py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center sm:justify-start gap-3 text-xs sm:text-sm font-bold">
+      <a href="#asrama-putra" class="px-4 py-2 rounded-full bg-emerald-100 text-emerald-900 hover:bg-emerald-200 transition-colors">
+        <i class="fa-solid fa-person mr-1.5"></i> Asrama Putra
+      </a>
+      <a href="#asrama-putri" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 hover:bg-pink-100 hover:text-pink-900 transition-colors">
+        <i class="fa-solid fa-person-dress mr-1.5"></i> Asrama Putri
+      </a>
+      <a href="#jadwal" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 hover:bg-amber-100 hover:text-amber-900 transition-colors">
+        <i class="fa-solid fa-clock mr-1.5"></i> Jadwal Santri 24 Jam
+      </a>
+      <a href="#tata-tertib" class="px-4 py-2 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">
+        <i class="fa-solid fa-gavel mr-1.5"></i> Tata Tertib
+      </a>
+    </div>
+  </div>
+
+  <!-- BAGIAN 1: ASRAMA PUTRA (DARUL MUTTAQIN) -->
+  <section id="asrama-putra" class="py-16 bg-white scroll-mt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-100 text-emerald-900 rounded-full text-xs font-extrabold uppercase">
+            <i class="fa-solid fa-person"></i> Kompleks Santri Putra
+          </div>
+          <h2 class="text-3xl font-extrabold text-emerald-950 leading-tight">
+            Asrama Putra <br>
+            <span class="text-emerald-700">"Darul Muttaqin"</span>
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Kompleks hunian santri putra didesain untuk menumbuhkan solidaritas, kedisiplinan sholat berjamaah, kemandirian mencuci pakaian dan menjaga kebersihan kobong, serta memfasilitasi mudzakarah kitab kuning.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
+              <div class="text-emerald-800 text-xl font-bold mb-1"><i class="fa-solid fa-users"></i></div>
+              <h4 class="font-bold text-sm text-slate-900">Kapasitas 650+ Santri</h4>
+              <p class="text-xs text-slate-500 mt-1">Terbagi dalam 36 kamar di 4 blok hunian.</p>
+            </div>
+            <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200">
+              <div class="text-emerald-800 text-xl font-bold mb-1"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4 class="font-bold text-sm text-slate-900">Pembina & Mudabbir</h4>
+              <p class="text-xs text-slate-500 mt-1">Diawasi asatidz dan pengurus santri senior 24 jam.</p>
+            </div>
+          </div>
+
+          <div class="space-y-2.5 pt-2">
+            <div class="text-xs font-bold text-emerald-900 uppercase tracking-wider">Fasilitas Asrama Putra:</div>
+            <ul class="text-xs text-slate-600 space-y-2">
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Kamar tidur representatif dengan almari santri dan sirkulasi udara baik</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Masjid Jami' Pesantren tempat sholat jamaah dan bandongan kitab</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Kamar mandi & sanitasi melimpah dengan air pegunungan dingin segar</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Lapangan futsal, bulu tangkis, tenis meja dan voli santri</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-emerald-600"></i> Koperasi santri, kantin sehat, dan layanan binatu / jemuran khusus</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border border-slate-200 relative group">
+            <img src="https://images.unsplash.com/photo-1584697964190-705b893683f1?auto=format&fit=crop&w=800&q=80" alt="Asrama Putra" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-emerald-950/90 via-emerald-950/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <span class="px-2.5 py-1 bg-amber-500 rounded text-xs font-bold">Darul Muttaqin</span>
+                <h3 class="text-lg font-bold mt-1">Gedung Asrama Putra Terpadu Gunung Bubut</h3>
+                <p class="text-xs text-slate-200 mt-0.5">Suasana tenang, sejuk, dan kental dengan nuansa ilmiah salafiyah.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BAGIAN 2: ASRAMA PUTRI (DARUL KHADIJAH) -->
+  <section id="asrama-putri" class="py-16 bg-slate-50 border-t border-slate-200/60 scroll-mt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 order-2 lg:order-1">
+          <div class="rounded-3xl overflow-hidden shadow-2xl border border-pink-100 relative group">
+            <img src="https://images.unsplash.com/photo-1596495577886-d920f1fb7238?auto=format&fit=crop&w=800&q=80" alt="Asrama Putri" class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-gradient-to-t from-pink-950/90 via-pink-950/20 to-transparent flex items-end p-6">
+              <div class="text-white">
+                <span class="px-2.5 py-1 bg-pink-600 rounded text-xs font-bold">Darul Khadijah</span>
+                <h3 class="text-lg font-bold mt-1">Kompleks Khusus Asrama Santriwati</h3>
+                <p class="text-xs text-slate-200 mt-0.5">Privasi terlindungi, aman, asri, dan dibimbing oleh para Nyai & Ustadzah.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-pink-100 text-pink-900 rounded-full text-xs font-extrabold uppercase">
+            <i class="fa-solid fa-person-dress"></i> Kompleks Santri Putri
+          </div>
+          <h2 class="text-3xl font-extrabold text-emerald-950 leading-tight">
+            Asrama Putri <br>
+            <span class="text-pink-700">"Darul Khadijah"</span>
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Kompleks asrama putri terpisah secara mandiri dalam pagar khusus yang menjaga ketat privasi santriwati. Di sini, para santriwati dibimbing dalam tahfidz Al-Qur'an, kajian kitab keputrian (Risalatul Mahid, Uqudul Lujain), serta keahlian tata boga dan keputrian.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="p-4 bg-white rounded-2xl border border-pink-200 shadow-sm">
+              <div class="text-pink-600 text-xl font-bold mb-1"><i class="fa-solid fa-heart"></i></div>
+              <h4 class="font-bold text-sm text-slate-900">Kapasitas 600+ Santriwati</h4>
+              <p class="text-xs text-slate-500 mt-1">32 kamar dengan pembagian tingkat MTs & SMK.</p>
+            </div>
+            <div class="p-4 bg-white rounded-2xl border border-pink-200 shadow-sm">
+              <div class="text-pink-600 text-xl font-bold mb-1"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <h4 class="font-bold text-sm text-slate-900">Asuhan Ustadzah</h4>
+              <p class="text-xs text-slate-500 mt-1">Didampingi Nyai Hj. Siti Fatimah & dewan pengasuh putri.</p>
+            </div>
+          </div>
+
+          <div class="space-y-2.5 pt-2">
+            <div class="text-xs font-bold text-pink-900 uppercase tracking-wider">Fasilitas Asrama Putri:</div>
+            <ul class="text-xs text-slate-600 space-y-2">
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-pink-600"></i> Musholla putri khusus untuk sholat jamaah dan sorogan Al-Qur'an</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-pink-600"></i> Dapur santriwati bersama dengan menu gizi higienis dan teratur</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-pink-600"></i> Poskestren (Pos Kesehatan Pesantren) khusus putri</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-pink-600"></i> Ruang pelatihan keputrian, kaligrafi, menjahit dan seni hadroh putri</li>
+              <li class="flex items-center gap-2.5"><i class="fa-solid fa-circle-check text-pink-600"></i> Akses gerbang terkunci 24 jam dengan penjagaan ketat</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BAGIAN 3: JADWAL HARIAN 24 JAM SANTRI -->
+  <section id="jadwal" class="py-16 bg-white border-t border-slate-200/60 scroll-mt-32">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-extrabold tracking-widest text-amber-600 uppercase bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+          Disiplin & Rutinitas Santri
+        </span>
+        <h2 class="text-3xl font-extrabold text-emerald-950 mt-2">
+          Jadwal Harian 24 Jam Santri Miftahul Ulum
+        </h2>
+        <div class="islamic-divider">
+          <i class="fa-solid fa-clock text-amber-500"></i>
+        </div>
+        <p class="text-slate-600 text-sm">
+          Setiap detik waktu di pesantren adalah ladang pahala dan pembiasaan disiplin hidup yang membekas seumur hidup.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+        <div class="p-6 bg-emerald-950 text-white flex justify-between items-center">
+          <div class="font-bold text-sm sm:text-base flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-amber-400"></i> Rutinitas Harian Santri Mukim (Senin - Ahad)
+          </div>
+          <span class="text-xs bg-emerald-800 text-amber-300 px-3 py-1 rounded-full font-semibold">
+            Wajib Ditaati
+          </span>
+        </div>
+
+        <div class="divide-y divide-slate-100" id="jadwalHarianList">
+          <!-- Rendered via JS from PesantrenData -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BAGIAN 4: TATA TERTIB ASRAMA -->
+  <section id="tata-tertib" class="py-16 bg-slate-50 border-t border-slate-200/60 scroll-mt-32">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs font-extrabold tracking-widest text-red-700 uppercase bg-red-50 px-3 py-1 rounded-full border border-red-200">
+          Pedoman Kedisiplinan
+        </span>
+        <h2 class="text-3xl font-extrabold text-emerald-950 mt-2">
+          Tata Tertib & Ketentuan Santri Mukim
+        </h2>
+        <div class="islamic-divider">
+          <i class="fa-solid fa-scale-balanced text-amber-500"></i>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Kewajiban Santri -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="font-extrabold text-lg text-emerald-950">Kewajiban Santri</h3>
+          </div>
+          <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5">
+            <li class="flex items-start gap-2.5"><span class="font-bold text-emerald-700">1.</span> Mengikuti sholat lima waktu berjamaah di masjid/musholla tepat waktu.</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-emerald-700">2.</span> Wajib menghadiri seluruh pengajian kitab kuning dan sekolah formal MTs/SMK.</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-emerald-700">3.</span> Menjaga adab ta'dzim kepada Dewan Masayikh, Asatidz, dan sesama kawan santri.</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-emerald-700">4.</span> Menjaga kebersihan kobong, masjid, dan lingkungan sekitar pesantren (Ro'an).</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-emerald-700">5.</span> Berpakaian sopan dan menutup aurat sesuai syari'at Islam (sarung, baju takwa, peci).</li>
+          </ul>
+        </div>
+
+        <!-- Larangan Santri -->
+        <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-100 text-red-800 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="font-extrabold text-lg text-red-950">Larangan Keras</h3>
+          </div>
+          <ul class="text-xs sm:text-sm text-slate-600 space-y-2.5">
+            <li class="flex items-start gap-2.5"><span class="font-bold text-red-700">1.</span> Dilarang keluar dari area kompleks pesantren tanpa izin resmi tertulis (Surat Izin Pulang).</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-red-700">2.</span> Dilarang membawa HP/gadget pribadi tanpa koordinasi dan persetujuan bagian keamanan/sekolah.</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-red-700">3.</span> Dilarang keras merokok, membawa senjata tajam, atau barang yang membahayakan.</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-red-700">4.</span> Dilarang melakukan perundungan (bullying) baik secara verbal maupun fisik.</li>
+            <li class="flex items-start gap-2.5"><span class="font-bold text-red-700">5.</span> Pelanggaran berat akan dikenakan sanksi ta'zir hingga pengembalian kepada orang tua.</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center text-xs text-slate-500">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <img src="assets/images/logo-pesantren.jpg" onerror="this.onerror=null; this.src='assets/images/logo.svg';" alt="Logo" class="w-10 h-10 object-contain rounded-full">
+        <span class="font-bold text-white text-sm">PONDOK PESANTREN MIFTAHUL ULUM GUNUNG BUBUT</span>
+      </div>
+      <div>&copy; 2026 Pondok Pesantren Miftahul Ulum Gunung Bubut Tasikmalaya. Hak Cipta Dilindungi.</div>
+      <div class="mt-3 flex justify-center gap-4 text-slate-400">
+        <a href="index.html" class="hover:text-white">Beranda</a>
+        <a href="profil.html" class="hover:text-white">Profil</a>
+        <a href="pendidikan.html" class="hover:text-white">Pendidikan Formal</a>
+        <a href="publikasi.html" class="hover:text-white">Publikasi</a>
+        <a href="psb.html" class="hover:text-white">PSB Online</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('jadwalHarianList');
+      if (container && PesantrenData.asrama && PesantrenData.asrama.jadwalHarian) {
+        container.innerHTML = PesantrenData.asrama.jadwalHarian.map((j, idx) => `
+          <div class="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-2 hover:bg-slate-50 transition-colors ${idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs shrink-0">
+                ${idx + 1}
+              </span>
+              <span class="font-bold text-xs sm:text-sm text-emerald-950">${j.kegiatan}</span>
+            </div>
+            <div class="text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-3 py-1 rounded-full self-start sm:self-auto">
+              <i class="fa-regular fa-clock mr-1"></i> ${j.waktu} WIB
+            </div>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>
+

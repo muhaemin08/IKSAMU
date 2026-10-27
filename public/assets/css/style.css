@@ -1,0 +1,180 @@
+/* ==========================================================================
+   PONDOK PESANTREN MIFTAHUL ULUM GUNUNG BUBUT
+   Custom Stylesheet (Inspiration: ppcipasung.com)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #065f46;      /* Emerald 800 */
+  --primary-dark: #064e3b; /* Emerald 900 */
+  --primary-light: #047857;/* Emerald 700 */
+  --accent-gold: #d97706;  /* Amber 600 */
+  --accent-gold-light: #fbbf24; /* Amber 400 */
+  --accent-cream: #fef3c7;
+  --bg-pattern: #f8fafc;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1e293b;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  background-color: #fbfbfa;
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+}
+
+/* Islamic Geometric Background Pattern */
+.bg-islamic-pattern {
+  background-color: #064e3b;
+  background-image: radial-gradient(rgba(251, 191, 36, 0.12) 1.5px, transparent 1.5px),
+                    radial-gradient(rgba(255, 255, 255, 0.08) 1.5px, #064e3b 1.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.bg-pattern-light {
+  background-color: #f8fafc;
+  background-image: radial-gradient(rgba(6, 95, 70, 0.07) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* Gradient Utilities */
+.bg-emerald-gold-gradient {
+  background: linear-gradient(135deg, #065f46 0%, #064e3b 65%, #042f2e 100%);
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+}
+
+.text-gold-gradient {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Header & Navbar Glass effect */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px -2px rgba(6, 78, 59, 0.08);
+}
+
+/* Dropdown Menu Transitions */
+.dropdown-group:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #059669;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #047857;
+}
+
+/* Card Hover Elevation */
+.hover-card-elevate {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.hover-card-elevate:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(6, 95, 70, 0.1), 0 8px 10px -6px rgba(6, 95, 70, 0.06);
+}
+
+/* Arabic Bismillah Ribbon */
+.bismillah-ribbon {
+  display: inline-block;
+  padding: 6px 24px;
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.12), rgba(217, 119, 6, 0.2), rgba(217, 119, 6, 0.12));
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  border-radius: 9999px;
+  color: #b45309;
+}
+
+/* Swiper Custom Pagination */
+.swiper-pagination-bullet {
+  background: #cbd5e1 !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+  transition: all 0.3s ease !important;
+}
+.swiper-pagination-bullet-active {
+  background: #d97706 !important;
+  width: 28px !important;
+  border-radius: 6px !important;
+}
+
+/* Floating Actions */
+.floating-btn {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.floating-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* Modal animation */
+.modal-overlay {
+  transition: opacity 0.3s ease;
+}
+.modal-content {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+}
+
+/* Badge tags */
+.badge-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+/* Decorative Divider with Crescent */
+.islamic-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 1.5rem 0;
+}
+.islamic-divider::before,
+.islamic-divider::after {
+  content: '';
+  height: 2px;
+  width: 60px;
+  background: linear-gradient(to right, transparent, #d97706);
+}
+.islamic-divider::after {
+  background: linear-gradient(to left, transparent, #d97706);
+}
