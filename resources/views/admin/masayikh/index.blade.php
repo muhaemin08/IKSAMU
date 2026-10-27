@@ -22,9 +22,7 @@
       <div class="divide-y divide-slate-100">
         @forelse($masayikhs as $m)
           @php
-            $photoUrl = $m->foto 
-              ? (str_starts_with($m->foto, 'http') ? $m->foto : asset($m->foto)) 
-              : 'https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=600&q=80';
+            $photoUrl = $m->foto_url;
           @endphp
           <div class="p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 hover:bg-slate-50/80 transition-colors">
             

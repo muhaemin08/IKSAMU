@@ -8,23 +8,34 @@ $dirs = [
 ];
 foreach ($dirs as $dir) {
     if (!is_dir($dir)) {
-        @mkdir($dir, 0755, true);
+        @mkdir($dir, 0777, true);
     }
 }
 
-// 2. SQLite Auto-Fallback: jika belum ada DB MySQL yang diset,
+// 2. SQLite Auto-Fallback: jika belum ada DB MySQL eksternal yang diset,
 // gunakan database.sqlite yang sudah terisi data lengkap pesantren
-$sqliteSource = __DIR__ . '/../database/database.sqlite';
-$sqliteTmp = '/tmp/database.sqlite';
-if (!file_exists($sqliteTmp) && file_exists($sqliteSource)) {
-    @copy($sqliteSource, $sqliteTmp);
-}
+$isMysql = (getenv('DB_CONNECTION') === 'mysql') || (!empty(getenv('DB_HOST')) && getenv('DB_HOST') !== '127.0.0.1');
 
-if (!getenv('DB_CONNECTION')) {
+if (!$isMysql) {
+    $sqliteSource = __DIR__ . '/../database/database.sqlite';
+    $sqliteTmp = '/tmp/database.sqlite';
+
+    // Salin jika belum ada atau ukuran tidak valid
+    if (file_exists($sqliteSource) && (!file_exists($sqliteTmp) || filesize($sqliteTmp) < 1000)) {
+        @copy($sqliteSource, $sqliteTmp);
+    }
+
+    // Pastikan hak akses baca & tulis (read-write) untuk SQLite
+    if (file_exists($sqliteTmp)) {
+        @chmod($sqliteTmp, 0666);
+    }
+
+    $activeDb = file_exists($sqliteTmp) ? $sqliteTmp : $sqliteSource;
+
     putenv('DB_CONNECTION=sqlite');
-    putenv('DB_DATABASE=/tmp/database.sqlite');
+    putenv('DB_DATABASE=' . $activeDb);
     $_ENV['DB_CONNECTION'] = 'sqlite';
-    $_ENV['DB_DATABASE'] = '/tmp/database.sqlite';
+    $_ENV['DB_DATABASE'] = $activeDb;
 }
 
 // 3. Teruskan request ke public/index.php Laravel

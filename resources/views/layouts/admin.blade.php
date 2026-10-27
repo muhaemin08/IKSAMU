@@ -221,6 +221,13 @@
       </div>
     @endif
 
+    @if(session('error'))
+      <div class="mx-4 sm:mx-6 mt-4 p-4 bg-red-100 border border-red-200 text-red-900 rounded-2xl flex items-center gap-3 text-xs font-bold shadow-xs">
+        <i class="fa-solid fa-triangle-exclamation text-base text-red-600"></i>
+        <span>{{ session('error') }}</span>
+      </div>
+    @endif
+
     @if($errors->any())
       <div class="mx-4 sm:mx-6 mt-4 p-4 bg-red-100 border border-red-200 text-red-900 rounded-2xl flex items-center gap-3 text-xs font-bold shadow-xs">
         <i class="fa-solid fa-triangle-exclamation text-base text-red-600"></i>

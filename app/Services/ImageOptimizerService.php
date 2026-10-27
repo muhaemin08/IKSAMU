@@ -29,8 +29,19 @@ class ImageOptimizerService
         int $quality = 82
     ): string {
         $destPath = public_path($subDir);
-        if (!File::isDirectory($destPath)) {
-            File::makeDirectory($destPath, 0755, true, true);
+        $isReadOnly = false;
+
+        // Cek apakah sistem file read-only (misal: Vercel serverless)
+        try {
+            if (!File::isDirectory($destPath)) {
+                if (!@File::makeDirectory($destPath, 0755, true, true)) {
+                    $isReadOnly = true;
+                }
+            } elseif (!is_writable($destPath)) {
+                $isReadOnly = true;
+            }
+        } catch (\Throwable $e) {
+            $isReadOnly = true;
         }
 
         $filename = $prefix . time() . '_' . Str::lower(Str::random(6)) . '.webp';
@@ -39,7 +50,9 @@ class ImageOptimizerService
 
         // Cek ketersediaan fungsi GD
         if (!extension_loaded('gd') || !function_exists('imagewebp')) {
-            // Fallback jika GD tidak tersedia
+            if ($isReadOnly) {
+                return 'data:' . $file->getMimeType() . ';base64,' . base64_encode(file_get_contents($file->getRealPath()));
+            }
             $fallbackName = $prefix . time() . '_' . Str::lower(Str::random(6)) . '.' . $file->getClientOriginalExtension();
             $file->move($destPath, $fallbackName);
             return trim($subDir, '/\\') . '/' . $fallbackName;
@@ -87,6 +100,9 @@ class ImageOptimizerService
 
         // Jika gagal membaca gambar dengan GD, fallback ke pemindahan standar
         if (!$source) {
+            if ($isReadOnly) {
+                return 'data:' . $mime . ';base64,' . base64_encode(file_get_contents($realPath));
+            }
             $fallbackName = $prefix . time() . '_' . Str::lower(Str::random(6)) . '.' . $file->getClientOriginalExtension();
             $file->move($destPath, $fallbackName);
             return trim($subDir, '/\\') . '/' . $fallbackName;
@@ -140,6 +156,15 @@ class ImageOptimizerService
         imagecopyresampled($canvas, $source, 0, 0, 0, 0, $newWidth, $newHeight, $origWidth, $origHeight);
 
         // Simpan langsung ke format WebP
+        if ($isReadOnly) {
+            ob_start();
+            imagewebp($canvas, null, $quality);
+            $rawWebp = ob_get_clean();
+            imagedestroy($source);
+            imagedestroy($canvas);
+            return 'data:image/webp;base64,' . base64_encode($rawWebp);
+        }
+
         imagewebp($canvas, $fullPath, $quality);
 
         // Bebaskan memori

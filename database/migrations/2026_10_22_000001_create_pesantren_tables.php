@@ -61,7 +61,7 @@ return new class extends Migration
             $table->string('gelar')->nullable();
             $table->string('peran')->nullable();
             $table->text('deskripsi')->nullable();
-            $table->string('foto')->nullable();
+            $table->longText('foto')->nullable();
             $table->integer('urutan')->default(0);
             $table->timestamps();
         });
@@ -74,7 +74,7 @@ return new class extends Migration
             $table->string('kapasitas')->nullable();
             $table->string('jumlah_kamar')->nullable();
             $table->string('pembina')->nullable();
-            $table->string('foto')->nullable();
+            $table->longText('foto')->nullable();
             $table->text('deskripsi')->nullable();
             $table->json('fasilitas')->nullable();
             $table->timestamps();
@@ -99,7 +99,7 @@ return new class extends Migration
             $table->string('jenjang')->nullable();
             $table->string('kepala_sekolah')->nullable();
             $table->text('deskripsi')->nullable();
-            $table->string('foto')->nullable();
+            $table->longText('foto')->nullable();
             $table->json('keunggulan')->nullable();
             $table->json('ekskul')->nullable();
             $table->json('jurusan')->nullable();
