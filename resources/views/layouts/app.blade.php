@@ -28,6 +28,23 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+  <style>
+    /* Strict Dropdown Visibility Rules */
+    .dropdown-menu {
+      opacity: 0 !important;
+      visibility: hidden !important;
+      pointer-events: none !important;
+      transform: translateY(8px);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .dropdown-group:hover > .dropdown-menu,
+    .group:hover > .dropdown-menu {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto !important;
+      transform: translateY(0) !important;
+    }
+  </style>
   @stack('styles')
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-emerald-600 selection:text-white flex flex-col min-h-screen">
@@ -87,7 +104,7 @@
           </a>
 
           <!-- Tentang (Dropdown) -->
-          <div class="relative dropdown-group">
+          <div class="relative group dropdown-group">
             <button type="button" class="relative flex items-center gap-1.5 px-3 py-2 text-slate-700 hover:text-emerald-700 transition-colors duration-300 group whitespace-nowrap {{ request()->routeIs('profil') ? 'text-emerald-700 font-bold' : '' }}">
               <span>Tentang</span>
               <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -95,7 +112,7 @@
               </svg>
               <span class="absolute inset-x-2 bottom-0 h-0.5 bg-emerald-600 transform {{ request()->routeIs('profil') ? 'scale-x-100' : 'scale-x-0' }} origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
             </button>
-            <div class="dropdown-menu absolute left-0 top-full pt-2 w-64 z-50">
+            <div class="dropdown-menu absolute left-0 top-full pt-2 w-64 z-50 opacity-0 invisible pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-200">
               <div class="bg-white rounded-2xl shadow-xl ring-1 ring-black/5 border border-slate-100 py-2 divide-y divide-slate-50 overflow-hidden">
                 <a href="{{ route('profil') }}#profil" class="flex items-center gap-3 px-4 py-2.5 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/70 transition-colors duration-200">
                   <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
@@ -147,7 +164,7 @@
           </div>
 
           <!-- Asrama (Dropdown) -->
-          <div class="relative dropdown-group">
+          <div class="relative group dropdown-group">
             <button type="button" class="relative flex items-center gap-1.5 px-3 py-2 text-slate-700 hover:text-emerald-700 transition-colors duration-300 group whitespace-nowrap {{ request()->routeIs('asrama') ? 'text-emerald-700 font-bold' : '' }}">
               <span>Asrama</span>
               <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +172,7 @@
               </svg>
               <span class="absolute inset-x-2 bottom-0 h-0.5 bg-emerald-600 transform {{ request()->routeIs('asrama') ? 'scale-x-100' : 'scale-x-0' }} origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
             </button>
-            <div class="dropdown-menu absolute left-0 top-full pt-2 w-72 z-50">
+            <div class="dropdown-menu absolute left-0 top-full pt-2 w-72 z-50 opacity-0 invisible pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-200">
               <div class="bg-white rounded-2xl shadow-xl ring-1 ring-black/5 border border-slate-100 py-2 divide-y divide-slate-50 overflow-hidden">
                 <a href="{{ route('asrama') }}#asrama-selamet" class="flex items-center gap-3 px-4 py-2.5 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/70 transition-colors duration-200">
                   <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
@@ -189,7 +206,7 @@
           </div>
 
           <!-- Pendidikan Formal (Dropdown) -->
-          <div class="relative dropdown-group">
+          <div class="relative group dropdown-group">
             <button type="button" class="relative flex items-center gap-1.5 px-3 py-2 text-slate-700 hover:text-emerald-700 transition-colors duration-300 group whitespace-nowrap {{ request()->routeIs('pendidikan*') ? 'text-emerald-700 font-bold' : '' }}">
               <span>Pendidikan Formal</span>
               <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -197,7 +214,7 @@
               </svg>
               <span class="absolute inset-x-2 bottom-0 h-0.5 bg-emerald-600 transform {{ request()->routeIs('pendidikan*') ? 'scale-x-100' : 'scale-x-0' }} origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
             </button>
-            <div class="dropdown-menu absolute left-0 top-full pt-2 w-80 z-50">
+            <div class="dropdown-menu absolute left-0 top-full pt-2 w-80 z-50 opacity-0 invisible pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-200">
               <div class="bg-white rounded-2xl shadow-xl ring-1 ring-black/5 border border-slate-100 py-2 divide-y divide-slate-50 overflow-hidden">
                 <a href="{{ route('pendidikan.mts') }}" class="flex items-center gap-3 px-4 py-2.5 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/70 transition-colors duration-200">
                   <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
@@ -226,7 +243,7 @@
           </div>
 
           <!-- Publikasi (Dropdown) -->
-          <div class="relative dropdown-group">
+          <div class="relative group dropdown-group">
             <button type="button" class="relative flex items-center gap-1.5 px-3 py-2 text-slate-700 hover:text-emerald-700 transition-colors duration-300 group whitespace-nowrap {{ request()->routeIs('publikasi*') ? 'text-emerald-700 font-bold' : '' }}">
               <span>Publikasi</span>
               <svg class="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 text-slate-400 group-hover:text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -234,7 +251,7 @@
               </svg>
               <span class="absolute inset-x-2 bottom-0 h-0.5 bg-emerald-600 transform {{ request()->routeIs('publikasi*') ? 'scale-x-100' : 'scale-x-0' }} origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
             </button>
-            <div class="dropdown-menu absolute left-0 top-full pt-2 w-64 z-50">
+            <div class="dropdown-menu absolute left-0 top-full pt-2 w-64 z-50 opacity-0 invisible pointer-events-none translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-200">
               <div class="bg-white rounded-2xl shadow-xl ring-1 ring-black/5 border border-slate-100 py-2 divide-y divide-slate-50 overflow-hidden">
                 <a href="{{ route('publikasi', ['kategori' => 'artikel']) }}" class="flex items-center gap-3 px-4 py-2.5 text-slate-700 hover:text-emerald-800 hover:bg-emerald-50/70 transition-colors duration-200">
                   <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
