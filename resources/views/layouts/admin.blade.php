@@ -52,16 +52,24 @@
 </head>
 <body class="bg-slate-100 text-slate-800 antialiased flex h-screen overflow-hidden">
 
-  <!-- SIDEBAR -->
-  <aside class="w-64 bg-emerald-950 text-white flex flex-col shrink-0 border-r border-emerald-900 select-none">
+  <!-- Mobile Sidebar Backdrop -->
+  <div id="adminSidebarBackdrop" class="fixed inset-0 bg-slate-900/60 backdrop-blur-xs z-40 hidden md:hidden"></div>
+
+  <!-- SIDEBAR (Responsive for Mobile & Desktop) -->
+  <aside id="adminSidebar" class="fixed inset-y-0 left-0 z-50 w-64 bg-emerald-950 text-white flex flex-col shrink-0 border-r border-emerald-900 select-none transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-300 ease-in-out">
     
     <!-- Sidebar Brand -->
-    <div class="p-5 border-b border-emerald-800/80 flex items-center gap-3">
-      <img src="{{ asset('assets/images/logo-pesantren.jpg') }}" onerror="this.onerror=null; this.src='{{ asset('assets/images/logo.svg') }}';" alt="Logo" class="w-10 h-10 object-contain rounded-full bg-white p-0.5">
-      <div>
-        <div class="font-extrabold text-sm leading-tight">MIFTAHUL ULUM</div>
-        <div class="text-[10px] text-amber-400 font-semibold tracking-wider">ADMIN PANEL</div>
+    <div class="p-5 border-b border-emerald-800/80 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="{{ asset('assets/images/logo-pesantren.jpg') }}" onerror="this.onerror=null; this.src='{{ asset('assets/images/logo.svg') }}';" alt="Logo" class="w-10 h-10 object-contain rounded-full bg-white p-0.5">
+        <div>
+          <div class="font-extrabold text-sm leading-tight">MIFTAHUL ULUM</div>
+          <div class="text-[10px] text-amber-400 font-semibold tracking-wider">ADMIN PANEL</div>
+        </div>
       </div>
+      <button type="button" id="adminSidebarClose" class="md:hidden text-slate-400 hover:text-white p-1.5 rounded-lg bg-emerald-900/60 transition-colors" title="Tutup Menu">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
     </div>
 
     <!-- Sidebar Menu Links -->
@@ -188,39 +196,66 @@
   <div class="flex-1 flex flex-col overflow-hidden">
     
     <!-- Top Header -->
-    <header class="bg-white border-b border-slate-200 px-6 py-4 flex justify-between items-center shadow-xs">
-      <h2 class="font-extrabold text-lg text-slate-800">
-        @yield('header_title', 'Dashboard')
-      </h2>
+    <header class="bg-white border-b border-slate-200 px-4 sm:px-6 py-3.5 sm:py-4 flex justify-between items-center shadow-xs">
       <div class="flex items-center gap-3">
-        <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-xs font-bold flex items-center gap-1.5">
-          <i class="fa-solid fa-circle text-[8px] text-emerald-600"></i>
-          MySQL Terhubung
-        </span>
+        <button type="button" id="adminSidebarToggle" class="md:hidden text-slate-700 hover:text-emerald-800 p-2 rounded-xl hover:bg-slate-100 transition-colors" title="Buka Menu">
+          <i class="fa-solid fa-bars text-lg"></i>
+        </button>
+        <h2 class="font-extrabold text-base sm:text-lg text-slate-800">
+          @yield('header_title', 'Dashboard')
+        </h2>
+      </div>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="{{ route('home') }}" target="_blank" class="px-2.5 sm:px-3 py-1 bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 rounded-full text-xs font-bold flex items-center gap-1.5 transition-colors">
+          <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+          <span class="hidden sm:inline">Lihat Web</span>
+        </a>
       </div>
     </header>
 
     <!-- Flash Message -->
     @if(session('success'))
-      <div class="mx-6 mt-4 p-4 bg-emerald-100 border border-emerald-200 text-emerald-900 rounded-2xl flex items-center gap-3 text-xs font-bold shadow-xs">
+      <div class="mx-4 sm:mx-6 mt-4 p-4 bg-emerald-100 border border-emerald-200 text-emerald-900 rounded-2xl flex items-center gap-3 text-xs font-bold shadow-xs">
         <i class="fa-solid fa-circle-check text-base text-emerald-600"></i>
         <span>{{ session('success') }}</span>
       </div>
     @endif
 
     @if($errors->any())
-      <div class="mx-6 mt-4 p-4 bg-red-100 border border-red-200 text-red-900 rounded-2xl flex items-center gap-3 text-xs font-bold shadow-xs">
+      <div class="mx-4 sm:mx-6 mt-4 p-4 bg-red-100 border border-red-200 text-red-900 rounded-2xl flex items-center gap-3 text-xs font-bold shadow-xs">
         <i class="fa-solid fa-triangle-exclamation text-base text-red-600"></i>
         <span>{{ $errors->first() }}</span>
       </div>
     @endif
 
     <!-- Scrollable Content -->
-    <main class="flex-1 overflow-y-auto p-6">
+    <main class="flex-1 overflow-y-auto p-4 sm:p-6">
       @yield('content')
     </main>
 
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sidebar = document.getElementById('adminSidebar');
+      const backdrop = document.getElementById('adminSidebarBackdrop');
+      const toggleBtn = document.getElementById('adminSidebarToggle');
+      const closeBtn = document.getElementById('adminSidebarClose');
+
+      const openSidebar = () => {
+        sidebar?.classList.remove('-translate-x-full');
+        backdrop?.classList.remove('hidden');
+      };
+      const closeSidebar = () => {
+        sidebar?.classList.add('-translate-x-full');
+        backdrop?.classList.add('hidden');
+      };
+
+      toggleBtn?.addEventListener('click', openSidebar);
+      closeBtn?.addEventListener('click', closeSidebar);
+      backdrop?.addEventListener('click', closeSidebar);
+    });
+  </script>
 
   @stack('scripts')
 </body>

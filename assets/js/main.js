@@ -14,18 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // Navbar logic & Mobile menu toggle
 function initNavbar() {
   const mobileToggle = document.getElementById('mobileMenuToggle');
+  const bottomTrigger = document.getElementById('mobileBottomMenuTrigger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileMenuClose = document.getElementById('mobileMenuClose');
   const header = document.getElementById('siteHeader');
 
-  if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
-      mobileMenu.classList.remove('hidden');
-      setTimeout(() => {
-        mobileMenu.querySelector('.drawer-content')?.classList.remove('-translate-x-full');
-      }, 10);
-    });
+  const openDrawer = () => {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('hidden');
+    setTimeout(() => {
+      mobileMenu.querySelector('.drawer-content')?.classList.remove('-translate-x-full');
+    }, 10);
+  };
 
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', openDrawer);
+  }
+
+  if (bottomTrigger) {
+    bottomTrigger.addEventListener('click', openDrawer);
+  }
+
+  if (mobileMenu) {
     const closeMenu = () => {
       const drawer = mobileMenu.querySelector('.drawer-content');
       if (drawer) drawer.classList.add('-translate-x-full');
@@ -153,40 +163,9 @@ function closeModal() {
 
 // PSB Online Registration Form
 function initPSBForm() {
+  // Biarkan form dikirim secara normal ke backend database via Laravel POST
   const form = document.getElementById('formPSB');
   if (!form) return;
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const nama = form.querySelector('[name="namaSantri"]')?.value;
-    const jk = form.querySelector('[name="jenisKelamin"]')?.value;
-    const pilihanPendidikan = form.querySelector('[name="pilihanPendidikan"]')?.value;
-    const pilihanAsrama = form.querySelector('[name="pilihanAsrama"]')?.value;
-    const namaWali = form.querySelector('[name="namaWali"]')?.value;
-    const noHp = form.querySelector('[name="noHp"]')?.value;
-    const alamat = form.querySelector('[name="alamatAsal"]')?.value;
-
-    const pesanWa = `*PENDAFTARAN SANTRI BARU (PSB) ONLINE*%0A`
-      + `*Pondok Pesantren Miftahul Ulum Gunung Bubut*%0A%0A`
-      + `• *Nama Santri:* ${encodeURIComponent(nama)}%0A`
-      + `• *Jenis Kelamin:* ${encodeURIComponent(jk)}%0A`
-      + `• *Jenjang Formal:* ${encodeURIComponent(pilihanPendidikan)}%0A`
-      + `• *Pilihan Asrama:* ${encodeURIComponent(pilihanAsrama)}%0A`
-      + `• *Nama Orang Tua/Wali:* ${encodeURIComponent(namaWali)}%0A`
-      + `• *No. WhatsApp/HP:* ${encodeURIComponent(noHp)}%0A`
-      + `• *Alamat Asal:* ${encodeURIComponent(alamat)}%0A%0A`
-      + `Mohon konfirmasi penerimaan formulir dan informasi jadwal tes seleksi. Terima kasih.`;
-
-    const waUrl = `https://wa.me/6282123456789?text=${pesanWa}`;
-
-    showToast(`Alhamdulillah! Data santri ${nama} berhasil disimpan. Anda akan diarahkan ke WhatsApp Panitia PSB.`, 'success');
-
-    setTimeout(() => {
-      window.open(waUrl, '_blank');
-      form.reset();
-    }, 1200);
-  });
 }
 
 // Contact Form

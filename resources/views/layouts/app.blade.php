@@ -82,13 +82,13 @@
       <div class="flex justify-between items-center h-20">
         
         <!-- Brand Logo -->
-        <a href="{{ route('home') }}" class="flex items-center gap-2.5 xl:gap-3 group shrink-0 py-2">
-          <img src="{{ asset($settings['logo_url'] ?? 'assets/images/logo-pesantren.jpg') }}" onerror="this.onerror=null; this.src='{{ asset('assets/images/logo.svg') }}';" alt="Logo" class="w-11 h-11 md:w-12 md:h-12 object-contain rounded-full transition-transform duration-300 group-hover:scale-105 drop-shadow-xs">
-          <div>
-            <h1 class="text-sm xl:text-base font-extrabold text-emerald-950 leading-tight uppercase tracking-tight whitespace-nowrap">
+        <a href="{{ route('home') }}" class="flex items-center gap-2 sm:gap-2.5 xl:gap-3 group shrink min-w-0 py-2">
+          <img src="{{ asset($settings['logo_url'] ?? 'assets/images/logo-pesantren.jpg') }}" onerror="this.onerror=null; this.src='{{ asset('assets/images/logo.svg') }}';" alt="Logo" class="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 object-contain rounded-full transition-transform duration-300 group-hover:scale-105 drop-shadow-xs shrink-0">
+          <div class="min-w-0">
+            <h1 class="text-xs sm:text-sm xl:text-base font-extrabold text-emerald-950 leading-tight uppercase tracking-tight truncate sm:whitespace-nowrap">
               {{ $settings['site_name'] ?? 'Miftahul Ulum' }}
             </h1>
-            <p class="text-[10px] xl:text-xs font-semibold text-amber-600 tracking-wider whitespace-nowrap">
+            <p class="text-[9px] sm:text-[10px] xl:text-xs font-semibold text-amber-600 tracking-wider truncate sm:whitespace-nowrap">
               {{ $settings['site_subname'] ?? 'GUNUNG BUBUT - TASIKMALAYA' }}
             </p>
           </div>
@@ -484,12 +484,12 @@
   </div>
 
   <!-- MAIN CONTENT -->
-  <main class="flex-grow">
+  <main class="flex-grow pb-20 lg:pb-0">
     @yield('content')
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 text-sm mt-auto">
+  <footer class="bg-slate-900 text-slate-300 border-t border-slate-800 text-sm mt-auto pb-16 lg:pb-0">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
         
@@ -577,14 +577,40 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP -->
-  <a href="https://wa.me/{{ $settings['whatsapp_psb'] ?? '6282123456789' }}?text=Assalamu%27alaikum,%20saya%20ingin%20bertanya%20mengenai%20Pondok%20Pesantren%20Miftahul%20Ulum" target="_blank" class="floating-btn fixed bottom-6 right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all" title="WhatsApp Panitia">
-    <i class="fa-brands fa-whatsapp text-3xl"></i>
+  <!-- MOBILE BOTTOM BAR (Al-Falah / Modern App Style) -->
+  <div class="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200/90 shadow-2xl px-2 py-1.5 flex items-center justify-around">
+    <a href="{{ route('home') }}" class="flex flex-col items-center gap-1 py-1 px-3 rounded-xl transition-colors {{ request()->routeIs('home') ? 'text-emerald-700 font-bold' : 'text-slate-500 hover:text-emerald-700' }}">
+      <i class="fa-solid fa-house text-base"></i>
+      <span class="text-[10px] leading-none">Beranda</span>
+    </a>
+    <a href="{{ route('profil') }}" class="flex flex-col items-center gap-1 py-1 px-3 rounded-xl transition-colors {{ request()->routeIs('profil*') ? 'text-emerald-700 font-bold' : 'text-slate-500 hover:text-emerald-700' }}">
+      <i class="fa-solid fa-mosque text-base"></i>
+      <span class="text-[10px] leading-none">Profil</span>
+    </a>
+    <a href="{{ route('psb') }}" class="flex flex-col items-center -mt-5">
+      <div class="w-12 h-12 rounded-full bg-emerald-700 text-white flex items-center justify-center shadow-lg shadow-emerald-700/30 border-2 border-white hover:bg-emerald-800 transition-transform active:scale-95">
+        <i class="fa-solid fa-file-pen text-amber-300 text-base"></i>
+      </div>
+      <span class="text-[10px] font-bold text-emerald-800 mt-1">PSB</span>
+    </a>
+    <a href="{{ route('alumni') }}" class="flex flex-col items-center gap-1 py-1 px-3 rounded-xl transition-colors {{ request()->routeIs('alumni*') ? 'text-emerald-700 font-bold' : 'text-slate-500 hover:text-emerald-700' }}">
+      <i class="fa-solid fa-graduation-cap text-base"></i>
+      <span class="text-[10px] leading-none">Alumni</span>
+    </a>
+    <button type="button" id="mobileBottomMenuTrigger" class="flex flex-col items-center gap-1 py-1 px-3 rounded-xl text-slate-500 hover:text-emerald-700 transition-colors">
+      <i class="fa-solid fa-bars text-base"></i>
+      <span class="text-[10px] leading-none">Menu</span>
+    </button>
+  </div>
+
+  <!-- FLOATING WHATSAPP (Responsive for Mobile & Desktop) -->
+  <a href="https://wa.me/{{ $settings['whatsapp_psb'] ?? '6282123456789' }}?text=Assalamu%27alaikum,%20saya%20ingin%20bertanya%20mengenai%20Pondok%20Pesantren%20Miftahul%20Ulum" target="_blank" class="floating-btn fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 bg-emerald-600 hover:bg-emerald-500 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-2xl transition-all" title="WhatsApp Panitia">
+    <i class="fa-brands fa-whatsapp text-2xl sm:text-3xl"></i>
   </a>
 
-  <!-- BACK TO TOP -->
-  <button id="backToTop" class="floating-btn fixed bottom-24 right-6 z-40 bg-white/90 hover:bg-white text-emerald-900 border border-slate-200 w-11 h-11 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 pointer-events-none translate-y-4">
-    <i class="fa-solid fa-chevron-up text-sm"></i>
+  <!-- BACK TO TOP (Responsive for Mobile & Desktop) -->
+  <button id="backToTop" class="floating-btn fixed bottom-34 sm:bottom-24 right-4 sm:right-6 z-40 bg-white/90 hover:bg-white text-emerald-900 border border-slate-200 w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center shadow-lg transition-all opacity-0 pointer-events-none translate-y-4">
+    <i class="fa-solid fa-chevron-up text-xs sm:text-sm"></i>
   </button>
 
   <script src="{{ asset('assets/js/main.js') }}"></script>

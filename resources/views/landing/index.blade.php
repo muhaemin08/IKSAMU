@@ -5,7 +5,7 @@
 @section('content')
 
   <!-- HERO SECTION WITH FULL-BLEED SLIDER & CENTERED CONTENT -->
-  <section id="heroSection" class="relative min-h-[580px] sm:min-h-[640px] lg:min-h-[720px] flex items-center justify-center text-white overflow-hidden bg-emerald-950">
+  <section id="heroSection" class="relative min-h-[520px] sm:min-h-[640px] lg:min-h-[720px] flex items-center justify-center text-white overflow-hidden bg-emerald-950">
     
     <!-- 1. FULL BACKGROUND IMAGE SLIDER (RANDOM SEQUENCE AUTO-SLIDE) -->
     <div id="heroSliderContainer" class="absolute inset-0 z-0">
@@ -47,85 +47,85 @@
     <div class="absolute inset-0 bg-black/40 z-10 pointer-events-none"></div>
     <div class="absolute inset-0 bg-islamic-pattern opacity-15 z-10 pointer-events-none"></div>
 
-    <!-- 3. CENTERED HERO CONTENT -->
-    <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-28 text-center flex flex-col items-center justify-center">
+    <!-- 3. CENTERED HERO CONTENT (FULLY OPTIMIZED FOR MOBILE & DESKTOP) -->
+    <div class="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-24 lg:py-28 text-center flex flex-col items-center justify-center">
       
       <!-- Top Badge / Ribbon -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-900/80 border border-amber-400/40 text-amber-300 text-xs sm:text-sm font-semibold backdrop-blur-md shadow-lg mb-6">
+      <div class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-emerald-900/80 border border-amber-400/40 text-amber-300 text-[11px] sm:text-sm font-semibold backdrop-blur-md shadow-lg mb-4 sm:mb-6">
         <i class="fa-solid fa-mosque text-amber-400 text-xs sm:text-sm"></i>
         <span>Selamat Datang di Website Resmi</span>
       </div>
 
       <!-- Main Headline: Centered, Bold & Ultra Clear -->
-      <h1 class="text-3xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
+      <h1 class="text-2xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
         {{ $settings['site_name'] ?? 'Pondok Pesantren Miftahul Ulum' }}
-        <span class="block mt-2.5 text-2xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] tracking-wide">
+        <span class="block mt-2 sm:mt-2.5 text-xl sm:text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-200 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] tracking-wide">
           {{ $settings['site_subname'] ?? 'GUNUNG BUBUT – TASIKMALAYA' }}
         </span>
       </h1>
 
       <!-- Subtitle Description -->
-      <p class="text-slate-100 text-sm sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-normal mt-5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
+      <p class="text-slate-100 text-xs sm:text-base md:text-lg max-w-3xl mx-auto leading-relaxed font-normal mt-3.5 sm:mt-5 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
         {{ $settings['hero_subtitle'] ?? 'Lembaga pendidikan Islam yang memadukan tradisi keilmuan kitab salafiyah ala Ahlussunnah wal Jama\'ah An-Nahdliyyah dengan pendidikan formal terpadu MTs & SMK Miftahul Ulum guna mencetak santri yang berakhlak mulia, cerdas, dan mandiri.' }}
       </p>
 
-      <!-- Centered Action Buttons (CTA) -->
-      <div class="pt-8 flex flex-wrap items-center justify-center gap-3.5 sm:gap-5">
-        <a href="{{ route('psb') }}" class="inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-2xl hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all cursor-pointer">
+      <!-- Centered Action Buttons (Full-width on mobile, auto on desktop) -->
+      <div class="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-5 w-full sm:w-auto">
+        <a href="{{ route('psb') }}" class="w-full max-w-xs sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm text-slate-950 bg-gradient-to-r from-amber-400 via-amber-300 to-amber-500 hover:from-amber-300 hover:to-amber-400 shadow-2xl hover:shadow-amber-500/40 hover:scale-105 active:scale-95 transition-all cursor-pointer">
           <i class="fa-solid fa-file-pen text-slate-950 text-sm sm:text-base"></i>
           <span>Pendaftaran Santri Baru (PSB)</span>
         </a>
-        <a href="{{ route('profil') }}" class="inline-flex items-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm text-white bg-emerald-900/80 hover:bg-emerald-800 border border-emerald-500/60 hover:border-amber-400 backdrop-blur-md shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer">
+        <a href="{{ route('profil') }}" class="w-full max-w-xs sm:w-auto inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full font-bold text-xs sm:text-sm text-white bg-emerald-900/80 hover:bg-emerald-800 border border-emerald-500/60 hover:border-amber-400 backdrop-blur-md shadow-xl hover:scale-105 active:scale-95 transition-all cursor-pointer">
           <i class="fa-solid fa-compass text-amber-400 text-sm sm:text-base"></i>
           <span>Profil & Sejarah Pesantren</span>
         </a>
       </div>
 
       <!-- Quick Feature Shortcut Pills (Centered 4-item grid) -->
-      <div class="pt-10 w-full max-w-4xl grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 text-xs">
-        <a href="{{ route('pendidikan.mts') }}" class="p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2.5 group">
-          <div class="w-8 h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
+      <div class="pt-6 sm:pt-10 w-full max-w-4xl grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3.5 text-xs">
+        <a href="{{ route('pendidikan.mts') }}" class="p-2.5 sm:p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2 sm:gap-2.5 group">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
             <i class="fa-solid fa-graduation-cap text-xs"></i>
           </div>
-          <div class="text-left">
-            <div class="font-extrabold text-white text-xs">MTs MU</div>
-            <div class="text-[10px] text-emerald-200">Akreditasi A</div>
+          <div class="text-left min-w-0">
+            <div class="font-extrabold text-white text-xs truncate">MTs MU</div>
+            <div class="text-[10px] text-emerald-200 truncate">Akreditasi A</div>
           </div>
         </a>
 
-        <a href="{{ route('pendidikan.smk') }}" class="p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2.5 group">
-          <div class="w-8 h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
+        <a href="{{ route('pendidikan.smk') }}" class="p-2.5 sm:p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2 sm:gap-2.5 group">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
             <i class="fa-solid fa-laptop-code text-xs"></i>
           </div>
-          <div class="text-left">
-            <div class="font-extrabold text-white text-xs">SMK MU</div>
-            <div class="text-[10px] text-emerald-200">Vokasi & IT</div>
+          <div class="text-left min-w-0">
+            <div class="font-extrabold text-white text-xs truncate">SMK MU</div>
+            <div class="text-[10px] text-emerald-200 truncate">Vokasi & IT</div>
           </div>
         </a>
 
-        <a href="{{ route('asrama') }}#asrama-selamet" class="p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2.5 group">
-          <div class="w-8 h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
+        <a href="{{ route('asrama') }}#asrama-selamet" class="p-2.5 sm:p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2 sm:gap-2.5 group">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
             <i class="fa-solid fa-hotel text-xs"></i>
           </div>
-          <div class="text-left">
-            <div class="font-extrabold text-white text-xs">Asrama Putra</div>
-            <div class="text-[10px] text-emerald-200">Selamet & Rahayu</div>
+          <div class="text-left min-w-0">
+            <div class="font-extrabold text-white text-xs truncate">Asrama Putra</div>
+            <div class="text-[10px] text-emerald-200 truncate">Putra Mukim</div>
           </div>
         </a>
 
-        <a href="{{ route('asrama') }}#asrama-alhidayah" class="p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2.5 group">
-          <div class="w-8 h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
+        <a href="{{ route('asrama') }}#asrama-alhidayah" class="p-2.5 sm:p-3 bg-emerald-950/70 hover:bg-emerald-900/90 rounded-2xl border border-emerald-800/80 hover:border-amber-400/80 backdrop-blur-md transition-all flex items-center justify-center sm:justify-start gap-2 sm:gap-2.5 group">
+          <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-emerald-800/80 group-hover:bg-amber-500 text-amber-400 group-hover:text-slate-950 flex items-center justify-center transition-colors shrink-0">
             <i class="fa-solid fa-heart text-xs"></i>
           </div>
-          <div class="text-left">
-            <div class="font-extrabold text-white text-xs">Asrama Putri</div>
-            <div class="text-[10px] text-emerald-200">Al-Hidayah</div>
+          <div class="text-left min-w-0">
+            <div class="font-extrabold text-white text-xs truncate">Asrama Putri</div>
+            <div class="text-[10px] text-emerald-200 truncate">Al-Hidayah</div>
           </div>
         </a>
       </div>
 
       <!-- Slide Indicator Dots -->
-      <div class="pt-6 flex items-center justify-center gap-2 z-20">
+      <div class="pt-5 sm:pt-6 flex items-center justify-center gap-2 z-20">
         @foreach($heroSlides as $i => $slide)
           <button type="button" 
                   class="hero-dot h-2 rounded-full transition-all duration-300 {{ $i === 0 ? 'bg-amber-400 w-7' : 'bg-white/40 hover:bg-white/80 w-2' }} cursor-pointer" 
@@ -136,11 +136,11 @@
 
     </div>
 
-    <!-- Navigation Arrows Left & Right -->
-    <button type="button" id="prevHeroSlide" class="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-slate-900/40 hover:bg-emerald-800/80 border border-white/20 text-white flex items-center justify-center text-sm backdrop-blur-md transition-all hover:scale-110 active:scale-95 z-30 cursor-pointer shadow-lg" aria-label="Slide Sebelumnya">
+    <!-- Navigation Arrows Left & Right (Desktop only to prevent overlapping on mobile) -->
+    <button type="button" id="prevHeroSlide" class="hidden sm:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-slate-900/40 hover:bg-emerald-800/80 border border-white/20 text-white items-center justify-center text-sm backdrop-blur-md transition-all hover:scale-110 active:scale-95 z-30 cursor-pointer shadow-lg" aria-label="Slide Sebelumnya">
       <i class="fa-solid fa-chevron-left"></i>
     </button>
-    <button type="button" id="nextHeroSlide" class="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-slate-900/40 hover:bg-emerald-800/80 border border-white/20 text-white flex items-center justify-center text-sm backdrop-blur-md transition-all hover:scale-110 active:scale-95 z-30 cursor-pointer shadow-lg" aria-label="Slide Selanjutnya">
+    <button type="button" id="nextHeroSlide" class="hidden sm:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-10 sm:w-12 h-10 sm:h-12 rounded-full bg-slate-900/40 hover:bg-emerald-800/80 border border-white/20 text-white items-center justify-center text-sm backdrop-blur-md transition-all hover:scale-110 active:scale-95 z-30 cursor-pointer shadow-lg" aria-label="Slide Selanjutnya">
       <i class="fa-solid fa-chevron-right"></i>
     </button>
 

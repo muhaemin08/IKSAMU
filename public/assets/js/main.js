@@ -14,18 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
 // Navbar logic & Mobile menu toggle
 function initNavbar() {
   const mobileToggle = document.getElementById('mobileMenuToggle');
+  const bottomTrigger = document.getElementById('mobileBottomMenuTrigger');
   const mobileMenu = document.getElementById('mobileMenu');
   const mobileMenuClose = document.getElementById('mobileMenuClose');
   const header = document.getElementById('siteHeader');
 
-  if (mobileToggle && mobileMenu) {
-    mobileToggle.addEventListener('click', () => {
-      mobileMenu.classList.remove('hidden');
-      setTimeout(() => {
-        mobileMenu.querySelector('.drawer-content')?.classList.remove('-translate-x-full');
-      }, 10);
-    });
+  const openDrawer = () => {
+    if (!mobileMenu) return;
+    mobileMenu.classList.remove('hidden');
+    setTimeout(() => {
+      mobileMenu.querySelector('.drawer-content')?.classList.remove('-translate-x-full');
+    }, 10);
+  };
 
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', openDrawer);
+  }
+
+  if (bottomTrigger) {
+    bottomTrigger.addEventListener('click', openDrawer);
+  }
+
+  if (mobileMenu) {
     const closeMenu = () => {
       const drawer = mobileMenu.querySelector('.drawer-content');
       if (drawer) drawer.classList.add('-translate-x-full');
