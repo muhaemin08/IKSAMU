@@ -1,5 +1,11 @@
 <?php
 
+// 0. Deteksi HTTPS dari Reverse Proxy (Vercel)
+if ((isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') || isset($_SERVER['VERCEL'])) {
+    $_SERVER['HTTPS'] = 'on';
+    $_SERVER['SERVER_PORT'] = 443;
+}
+
 // 1. Pastikan direktori writable di /tmp Vercel sudah tersedia
 $dirs = [
     '/tmp/views',
